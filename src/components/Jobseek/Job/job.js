@@ -1,8 +1,6 @@
 //.icon-website:before { content: '\e802'; } /* '' */
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
 import map from 'lodash/map';
-import { connect } from 'react-redux';
 import Aux from '../../Aux';
 import { computelocation } from '../../../utils/searchLocationMethods';
 import Dot from '../../../components/Dot';
@@ -10,10 +8,8 @@ import shortid from 'shortid';
 import { jobColors } from '../../../models/colors';
 import ToolTip from '../../../components/ToolTip';
 import createMarkup from '../../../utils/createMarkup';
-import { CSSTransition } from 'react-transition-group';
-import { calculateDateInFormat } from '../../../utils/createUrl';
+import { calculateDateInFormat, createAdvancedUrl } from '../../../utils/createUrl';
 import DefaultJobfeedImage from '../../../image/company-icon@3x.png';
-import { s3Url } from '../../../config';
 import './job.scss';
 
 export default class job extends Component {
@@ -36,28 +32,13 @@ export default class job extends Component {
 
   render() {
     const {
-      index,
       jobData,
-      showStar,
-      showInfoIcon,
-      showShowcaseOnHover,
     } = this.props;
 
     const {
       id,
-      premium,
       title,
       createdTime,
-      showcase,
-      diversity,
-      star,
-      saved,
-      refCode,
-      femaleCandidate,
-      differentlyAbled,
-      exDefence,
-      workFromHome,
-      femaleBackWorkForce,
       applied,
       location,
       min,
@@ -65,25 +46,23 @@ export default class job extends Component {
       companyData,
       companyStatus,
       confidential,
-      applyUrl,
-      assessmentFlags,
-      mediaResume
     } = jobData;
 
     const {
       colorIndex,
-      showDateHover
     } = this.state;
+    const s3Url = 'https://staticlogo.hirist.com';
+    const ABS_URL = "https://www.hirist.com";
     const postingDate = calculateDateInFormat(createdTime);
     const displayLocation = computelocation(location); 
     const cmpName = companyStatus == 1 ? title.split('-')[ 0 ] : 'Consultant';
     const companyName = confidential ? 'Verified Recruiter' : (companyData ? companyData.companyName : cmpName);
     return (
       <Aux>
-        <a className="" target="_blank">
+        <a className="" target="_blank" href={`${ABS_URL}${createAdvancedUrl(title, id, 'j')}`}>
            <div className={`job-card row ${applied ? 'applied-border' : ''} `}>
             <div className="job-description col-sm-9 col-xl-9">
-                 <a style={{ display: 'unset' }} target="_blank" name="view_link" className='company-img-wrapper' >
+                 <a style={{ display: 'unset' }} target="_blank" name="view_link" className='company-img-wrapper' href={`${ABS_URL}${createAdvancedUrl(title, id, 'j')}`} >
                  {(companyData && companyData.companyId != 0) && !confidential ?
                   <img className="logo-image" src={`${s3Url}/${companyData.companyId}-100X100.png`} alt={`Logo for ${companyData.companyId}`}/> : 
                   <img className="logo-card default-job" src={DefaultJobfeedImage} style={{ backgroundColor: jobColors[ colorIndex ] }} />
@@ -101,7 +80,7 @@ export default class job extends Component {
                     </span> : ''
                 }
                <div className="job-title">
-                  <a target="_blank" name="view_link" style={{ color: '#000' }}>
+                  <a target="_blank" name="view_link" style={{ color: '#000' }} href={`${ABS_URL}${createAdvancedUrl(title, id, 'j')}`}>
                     {title.split('(')[ 0 ]}
                   </a>
                </div>

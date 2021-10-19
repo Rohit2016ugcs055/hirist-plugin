@@ -5,11 +5,7 @@ import {
   fetchJobFeeds,
   fetchJobFeedsSuccess,
 } from './actions';
-import {
-  JOBSEEK_SERVICE_URL,
-  seeker_enc,
-  USER_SERVICE_URL
-} from '../../config';
+const JOBSEEK_SERVICE_URL = "https://stagenodenew.hirist.com";
 
 const token = '7b22656d61696c223a2272756368696b614069696d6a6f62732e636f6d222c226964223a22393838303930222c2274797065223a327d'
 

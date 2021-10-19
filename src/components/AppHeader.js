@@ -2,7 +2,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { CSSTransition } from 'react-transition-group';
 import Logo from './Logo';
 import './AppHeader.scss';
 
@@ -39,14 +38,22 @@ class AppHeader extends React.Component {
    
   }
 
+
+  handleLogoClick = () => {
+    const ABS_URL =  "https://www.hirist.com";
+    const { history, prefText } = this.props;
+    window.location.href = `${ABS_URL}/jobfeed`;
+  }
+
   render() {
       const { headerSticky } = this.state;
+      const ABS_URL =  "https://www.hirist.com";
     return (
       <AppHeaderInnerWrapper style={ headerSticky ? {'position': 'fixed'} : {'position': 'unset'} }>
-        <Logo />
+        <Logo handleClick={this.handleLogoClick} />
         <div className="hirist-logo-divider"></div>
         <div className="hirist-header-message">
-          <div className="powered-message-heading">Powered by <a>hirist.com</a></div>
+          <div className="powered-message-heading">Powered by <a href={`${ABS_URL}/jobfeed`}>hirist.com</a></div>
           <div className="hirist-leading-portal">Hirist is a leading job portal for premium tech jobs.</div>
         </div>
       </AppHeaderInnerWrapper>
