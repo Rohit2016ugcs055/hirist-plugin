@@ -1,0 +1,607 @@
+@import '../../../themes/divider.scss';
+@import '../../../themes/opacity.scss';
+
+.in-block {
+  display: inline-block;
+}
+
+
+
+.job-card {
+  width: 100%;
+  min-height: 70px;
+  border-radius: 8px;
+  border: solid 1px #efefef;
+  background-color: #ffffff;
+  margin-bottom: 10px !important;
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.09);
+  }
+  @media only screen and (max-width: 425px) {
+    margin-left: -11px;
+  }
+}
+
+a {
+  text-decoration: none !important;
+}
+
+
+
+.job-card-with-checkbox {
+  @media all and (width: 768px) {
+    width: 95%;
+  }
+}
+
+.job-card:hover .logo-card {
+  box-shadow: 0 4px 20px 0 rgba(180, 185, 216, 0.44);
+}
+
+.job-apply-checkbox {
+  position: absolute;
+  left: -56px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+
+  @media all and (max-width: 767px) {
+    left: -51px;
+  }
+
+  input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    display: none;
+  }
+
+  input[type="checkbox"] + label {
+    background-image: url("https://job-static.hirist.com/resources/unchecked.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left 2px center;
+    cursor: pointer;
+    width: 50px;
+    height: 90px;
+    position: absolute;
+    top: -12px;
+  }
+
+  input[type="checkbox"]:checked + label {
+    background-image: url("https://job-static.hirist.com/resources/checked.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left 2px center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:disabled + label {
+    background-image: url("https://job-static.hirist.com/resources/unchecked-disabled.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left 2px center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:disabled[applied="true"] + label {
+    background-image: url("https://job-static.hirist.com/resources/checked-disabled.svg");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: left 2px center;
+    cursor: pointer;
+  }
+
+  label:hover + .set-tooltip {
+    display: block;
+    width: 300px;
+    left: 135px;
+    i {
+      left: 20px;
+    }
+  }
+}
+
+.feed-tooltip {
+  display: block;
+  position: relative;
+  font-size: 13px;
+  left: auto;
+  top: auto;
+  margin-left: 200px;
+  margin-bottom: 20px;
+
+  @media all and (max-width: 425px) {
+    margin-left: 145px;
+    width: 300px;
+    text-align: left;
+  }
+
+  i {
+    top: auto!important;
+    bottom: -3px!important;
+    left: 19px!important;
+    transform: rotate(-45deg)!important;
+    -webkit-transform: rotate(-45deg)!important;
+    -moz-transform: rotate(-45deg)!important;
+    -ms-transform: rotate(-45deg)!important;
+    -o-transform: rotate(-45deg)!important;
+  }
+}
+
+.applied-border {
+  border: 1px solid #49c5b6;
+}
+
+.logo-card {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #56baea;
+  position: absolute;
+  left: -24px;
+  top: 10px;
+}
+
+.default-job {
+  padding: 12px 7px;
+  font-size: 26px;
+  color: white;
+  background: white;
+}
+
+.logo-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  left: -24px;
+  top: 10px;
+  border: solid 1px #ececec;
+  &:hover {
+    box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+
+.applied-card {
+  width: 50px;
+  height: 16px;
+  border-radius: 3px;
+  background-color: #49c5b6;
+  position: absolute;
+  font-size: 10px;
+  color: white;
+  top: -8px;
+  left: 42px;
+  padding: 3.5px;
+}
+
+.job-description {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px;
+
+  @media screen and (max-width: 425px) {
+    padding-right: 7px;
+    padding-left: 3px;
+    font-size: 14px;
+  }
+}
+
+.job-title {
+  margin-left: 29px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  a:hover {
+    text-decoration: none;
+    color: #000;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-left: 34px;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-top: 6px;
+    a {
+      word-break: break-word;
+    }
+  }
+} 
+
+.job-fields {
+  margin-left: 26px;
+  margin-top: 6px;
+  margin-bottom: 11px;
+
+  @media screen and (max-width: 600px) {
+    margin-left: 34px;
+
+    .ml0 {
+      margin-left: 7px;
+    }
+  }
+
+  // .col-year {
+  //   float: right;
+  //   margin-right: 20px;
+  // }
+
+  @media screen and (min-width: 426px) {
+    .show-xs {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .ml0 {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .hide-xs {
+      display: none;
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+    @media screen and (max-width: 425px) {
+      text-align: left;
+    }
+  }
+}
+
+.job-info {
+  vertical-align: top;
+  text-align: right;
+  padding-left: 0px;
+
+  @media only screen and (max-width: 1024px) {
+    margin-left: 0px;
+  }
+
+  @media only screen and (max-width: 425px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    padding-right: 10px;
+    padding-left: 0px;
+  }
+}
+
+.job-info .job-info_more {
+  color: rgba(0,0,0,0.7);
+  font-weight: 300;
+  font-size: 9px;
+  text-align: center;
+}
+
+.circle-around {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid #b4b9d8;
+  margin-right: 6px;
+  margin-left: 5px;
+  display: inline-block;
+  padding-top: 6px;
+  padding-right: 4px;
+  margin-top: 10px;
+  transition: all 1s;
+  cursor: pointer;
+
+  @media screen and (max-width: 600px) {
+    margin-right: 4px;
+    margin-left: 1px;
+  }
+}
+
+.subtitle-button {
+  height: 36px;
+  border-radius: 18px;
+  border: solid 1px #006ed7;
+  margin-top: 17px;
+  width: 120px;
+  float: right;
+  margin-right: 25px;
+}
+
+.more-info-button {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.verticaldivider {
+  margin: 0 6px;
+}
+
+.verticaldivider:after {
+  content: '';
+  width: 0;
+  height: 45%;
+  border: 0.6px solid #e9effa;
+  position: absolute;
+  top: 12px;
+}
+
+.flex {
+  display: flex;
+}
+
+.hover-more {
+  width: 36px;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04);
+  background-color: #b4b9d8;
+  z-index: 1;
+  position: absolute;
+  right: -30px;
+
+  .hover-i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+  }
+  @media only screen and (max-width: 425px) {
+    right: -15px;
+  }
+}
+
+.half {
+  height: 50%;
+  position: relative;
+}
+
+.half:nth-of-type(2) {
+  border-top: 1px solid #fff;
+}
+
+.half:only-of-type {
+  height: 100%;
+}
+
+.original {
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
+}
+
+.alt_bg:nth-of-type(2n) {
+  background-color: #f5f6f7;
+}
+
+.pt4 {
+  padding-top: 4px;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.ws {
+  white-space: normal;
+  overflow: hidden;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ol {
+  text-align: left;
+  list-style-type: square;
+  margin-left: 24px;
+  font-style: normal;
+  font-size: 16px
+}
+
+.relative {
+  position: relative;
+}
+
+@media (max-width:1399px){
+  .diverse {
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 1440px){
+  .diverse {
+    padding-right: 9px;
+  }
+}
+
+.showcase-logo {
+  position: relative;
+}
+
+.showcase-logo a {
+  text-decoration: none;
+}
+
+.showcase-logo:hover #save_job {
+  display: block;
+}
+
+.set-tooltip {
+
+  i {
+    position:absolute;
+    top: -2px;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+    background-color: inherit;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    transform: rotate(135deg);
+    border-radius: 0 0 0 0.25em;
+  }
+
+  i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:50%;
+    transform:translate(-50%,50%) rotate(45deg);
+    background-color:#1c2d41;
+    border:1px solid #1c2d41;
+  }
+}
+
+#company-job {
+  position: relative;
+  @media all and (max-width: 425px) {
+    margin-left: 30px;
+  }
+  &:hover #company_data {
+    display: block;
+    @media all and (max-width: 425px) {
+      display: none;
+    }
+  }
+}
+
+#company_data {
+  top: 26px;
+}
+
+#display_location {
+  top: 26px;
+}
+
+#location:hover #display_location {
+  display: block;
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
+}
+
+.showcase:hover #sneak_peak {
+  display: block;
+}
+
+.showcase:hover #binoculars {
+  filter: invert(26%) sepia(3%) saturate(13%) hue-rotate(314deg) brightness(93%) contrast(82%);
+}
+
+.diverse:hover #explore_diversity {
+  display: block;
+}
+
+.diverse:hover #user {
+  filter: invert(26%) sepia(3%) saturate(13%) hue-rotate(314deg) brightness(93%) contrast(82%);
+}
+
+#star:hover #star_job {
+  display: block;
+}
+
+#company:hover #company_job {
+  display: block;
+}
+
+#premium:hover #premium_job {
+  display: block;
+}
+
+#diversity:hover #diversity_logo {
+  display: block;
+}
+
+#applied:hover #applied_job {
+  display: block;
+}
+
+.diversity-li {
+  padding: 2px 1px;
+}
+
+.close {
+  float: right;
+  line-height: 1;
+  text-shadow: 0 0;
+  opacity: 1;
+  font-weight: 400;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1146px) {
+  .mr10 {
+    margin-right: 7px;
+  }
+}
+
+.show-tooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.mr {
+  margin-right: 12px;
+}
+
+@media (min-width: 1440px) {
+  .mr {
+    margin-right: 23px;
+  }
+}
+
+.pdr5 {
+  padding-right: 5px;
+}
+
+.align-title{
+  @media screen and (max-width: 425px){
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    width: 75%;
+    margin-left: 0px;
+    margin-top: 2px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 75%;
+  }
+}
+
+.pb10 {
+  padding-bottom: 10px;
+}
+
+.apply_margin {
+  margin-top: 10px;
+}

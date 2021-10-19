@@ -1,0 +1,23 @@
+.hirist-logo-divider {
+    width: 2px;
+    height: 30px;
+    border: 2px solid  #ececec;
+    display: inline-block;
+    margin-top: 19px;
+}
+
+.hirist-header-message {
+    display: inline-block;
+    margin-left: 50px;
+    @media screen  and (max-width: 601px){
+        margin-left: 28px;
+    }
+    padding: 1px;
+    a {
+        color:#e9630c !important;
+        text-decoration: underline !important;
+    }
+    .powered-message-heading {
+        font-weight: bold;
+    }
+}
