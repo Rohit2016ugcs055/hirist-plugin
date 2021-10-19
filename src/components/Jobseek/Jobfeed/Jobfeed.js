@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import map from 'lodash/map';
 import Job from '../Job/job'
+import Spinner from 'react-bootstrap/Spinner';
 import './Jobfeed.scss';
 import {
   getJobFeed,
@@ -94,7 +95,14 @@ class Jobfeed extends Component {
                   />
                 ))}
               </div>
+              
             )}
+             {
+              isLoading ?
+              <Spinner animation="border" role="status">
+                 <span className="visually-hidden"></span>
+              </Spinner> : ''
+            }
       </Wrapper>
       </div>
       
