@@ -12,6 +12,7 @@ import {
   getJobLoading,
   hasMoreFeeds,
 } from '../../../components/Jobseek/selector';
+import JobSeekLoader from '../../JobSeekLoader';
 import { getJobFeeds } from '../api'
 
 
@@ -77,20 +78,23 @@ class Jobfeed extends Component {
           </div>
         <Wrapper className="col-lg-9">
             <div className="clearfix" />
-            <div className="jobfeed-wrapper multiple-wrapper">
-              {map(jobFeed && jobFeed.filter(j => j.applied === 0), (job, index) => (
-                <Job
-                  key={job.id}
-                  index={index}
-                  jobData={job}
-                  saved={job.saved}
-                  showCheckbox={true}
-                  showStar={true}
-                  showInfoIcon={true}
-                  showShowcaseOnHover={true}
-                />
-              ))}
-            </div>
+            {(jobFeed && !jobFeed.length) && isLoading ? <JobSeekLoader /> : (
+            
+              <div className="jobfeed-wrapper multiple-wrapper">
+                {map(jobFeed && jobFeed.filter(j => j.applied === 0), (job, index) => (
+                  <Job
+                    key={job.id}
+                    index={index}
+                    jobData={job}
+                    saved={job.saved}
+                    showCheckbox={true}
+                    showStar={true}
+                    showInfoIcon={true}
+                    showShowcaseOnHover={true}
+                  />
+                ))}
+              </div>
+            )}
       </Wrapper>
       </div>
       
