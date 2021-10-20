@@ -39,7 +39,10 @@ class Jobfeed extends Component {
   componentDidMount() {
      const { dispatch } = this.props;
      dispatch(getJobFeeds(988090,0,'date'));
-     window.addEventListener('scroll', this.handleScroll)
+     const plugin_body = document.querySelector(".overlay-hirist-plugin");
+     const ele = document.getElementsByClassName("overlay-hirist-plugin")
+     console.log("========",ele,document)
+     plugin_body.addEventListener('scroll', this.handleScroll)
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,7 +54,8 @@ class Jobfeed extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
+    const plugin_body = document.querySelector(".overlay-hirist-plugin");
+    plugin_body.removeEventListener('scroll', this.handleScroll)
   }
 
   handleScroll = () => {
@@ -59,9 +63,11 @@ class Jobfeed extends Component {
     const { loading, hasMore  } = this.props;
     const body = document.body;
     const docHeight = body.clientHeight;
-    if ((window.innerHeight + window.pageYOffset >= docHeight - 50) && (!loading) && (hasMore)) {
-        this.setState({ page: page + 1 })
-    }
+    console.log("=======check=====",docHeight,window.innerHeight)
+    
+    // if ((window.innerHeight + window.pageYOffset >= docHeight - 50) && (!loading) && (hasMore)) {
+    //     this.setState({ page: page + 1 })
+    // }
  }
 
 

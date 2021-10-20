@@ -12,23 +12,15 @@ import { calculateDateInFormat, createAdvancedUrl } from '../../../utils/createU
 import DefaultJobfeedImage from '../../../image/company-icon@3x.png';
 import './job.scss';
 
+
+
 export default class job extends Component {
   constructor(props){
     super(props);
     this.state = {
       colorIndex: Math.floor(Math.random() * 6),
-      showDateHover: true,
     }
   }
-
-  hideDateHover = () => {
-    this.setState({ showDateHover: false });
-  }
-
-  showDateHover = () => {
-    this.setState({ showDateHover: true });
-  }
-
 
   render() {
     const {

@@ -7,7 +7,7 @@ import './AppHeader.scss';
 
 const AppHeaderInnerWrapper = styled.div`
   background-color: #ffffff;
-  width: 100%;
+  width: 685px;
   position: fixed;
   height: auto;
   min-height: 70px;

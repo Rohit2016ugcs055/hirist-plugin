@@ -1,0 +1,12 @@
+.overlay-hirist-plugin {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    overflow: scroll;
+    width: 700px;
+    height: 1000px;
+    box-shadow: 0 22px 44px 0 rgb(0 0 0 / 13%);
+    z-index: 10;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
