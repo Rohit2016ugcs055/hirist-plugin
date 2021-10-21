@@ -11,7 +11,6 @@ const AppHeaderInnerWrapper = styled.div`
   position: fixed;
   height: auto;
   min-height: 70px;
-  top: 0px;
   border-bottom: 1px solid #e6e6e6;
   z-index: 3;
 
