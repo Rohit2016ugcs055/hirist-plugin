@@ -26,8 +26,8 @@ export default (state = initialState, action) => {
         ...state,
         isJobLoading: false,
         jobFeed: action.payload.pageNo === 0
-          ? action.payload.jobFeed
-          : [ ...state.jobFeed, ...action.payload.jobFeed ],
+          ? [...action.payload.jobFeed.filter(j => j.applied === 0)]
+          : [ ...state.jobFeed, ...action.payload.jobFeed.filter(j => j.applied === 0) ],
         hasMore: action.payload.hasMore,
       }
 

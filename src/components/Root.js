@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import RootWrapper from './RootWrapper';
-import styled from 'styled-components';
-import Jobfeed from './Jobseek/Jobfeed/Jobfeed2';
+import Jobfeed from './Jobseek/Jobfeed/Jobfeed';
 import AppHeader from './AppHeader'
 import './Root.scss';
 

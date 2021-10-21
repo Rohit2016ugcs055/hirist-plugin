@@ -53,7 +53,7 @@ export default class job extends Component {
       <Aux>
         <a className="" target="_blank" href={`${ABS_URL}${createAdvancedUrl(title, id, 'j')}`}>
            <div className={`job-card row ${applied ? 'applied-border' : ''} `}>
-            <div className="job-description col-sm-9 col-xl-9">
+            <div className="job-description">
                  <a style={{ display: 'unset' }} target="_blank" name="view_link" className='company-img-wrapper' href={`${ABS_URL}${createAdvancedUrl(title, id, 'j')}`} >
                  {(companyData && companyData.companyId != 0) && !confidential ?
                   <img className="logo-image" src={`${s3Url}/${companyData.companyId}-100X100.png`} alt={`Logo for ${companyData.companyId}`}/> : 
